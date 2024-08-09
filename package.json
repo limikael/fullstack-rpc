@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-rpc",
+  "version": "1.0.1",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {},
+  "exports": {
+    "./client": "./fullstack-rpc-client.js",
+    "./server": "./fullstack-rpc-server.js",
+    "./react": "./fullstack-rpc-react.jsx"
+  }
+}
