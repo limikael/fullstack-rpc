@@ -2,11 +2,15 @@ import {urlGetArgs, splitPath, jsonEq} from "./js-util.js";
 
 export class RpcServer {
 	constructor(path) {
-		//console.log("consructor: "+path);
+		//console.log("fullstack rpc server consructor: "+path);
 		this.path=path;
 	}	
 
 	async handleRequest(req, {handlerFactory}) {
+		//console.log("handle req in fullstack rpc...");
+		//console.log(req);
+		//console.log("method: "+req.method);
+
 		if (req.method.toUpperCase()!="POST")
 			return;
 
@@ -23,9 +27,9 @@ export class RpcServer {
 				throw e;
 			}
 
-			//console.log("instance created...");
-
 			let body=await req.json();
+			//console.log("instance created, will call="+body.method);
+
 			if (!instance[body.method])
 				throw new Error("Not found: "+body.method);
 				//throw new HttpError("Not found: "+body.method,{status: 404});

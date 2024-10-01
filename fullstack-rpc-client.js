@@ -20,6 +20,7 @@ export class RpcClient {
 
 	async callMethod(method, params) {
 		//console.log("calling: "+method);
+		//console.log("fetch",this.fetch);
 
 		let response=await this.fetch(this.url,{
 			method: "POST",
